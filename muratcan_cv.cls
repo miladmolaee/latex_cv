@@ -29,9 +29,11 @@
 \newcommand*{\setmobile}[1]{\def\@mobile{#1}}
 \newcommand*{\setposition}[1]{\def\@position{#1}}
 \newcommand*{\setmail}[1]{\def\@mail{#1}}
+\newcommand*{\setwebsite}[1]{\def\@website{#1}}
 \newcommand*{\setthemecolor}[1]{\def\@themecolor{#1}}
 \newcommand*{\setlinkedinaccount}[1]{\def\@linkedinaccount{#1}}
 \newcommand*{\setgithubaccount}[1]{\def\@githubaccount{#1}}
+\newcommand*{\setresearchgateaccount}[1]{\def\@researchgateaccount{#1}}
 
 %Setup for coverletter
 
@@ -51,7 +53,7 @@
 % can makebox also be used?
 \newcommand\headerview{
 \begin{minipage}{0.25\linewidth}
-    \profpic{0.22}{images/profilepicture}
+    \profpic{0.22}{images/profile-1}
 \end{minipage}% 
 \hfill
 \begin{minipage}{0.45\linewidth}
@@ -76,17 +78,20 @@
 %contactsubviews 
     
     
-\newcommand{\githubview}{\href{\@linkedinaccount}{\faLinkedinSquare\ \footnotesize linkedin}}
-\newcommand{\linkedinview}{\href{\@githubaccount}{\faGithubSquare\ \footnotesize github}}
+\newcommand{\linkedinview}{\href{\@linkedinaccount}{\faLinkedinSquare\ \footnotesize linkedin}}
+\newcommand{\githubview}{\href{\@githubaccount}{\faGithubSquare\ \footnotesize github}}
+\newcommand{\researchgateview}{\href{\@researchgateaccount}{\faSquare\ \footnotesize researchgate}}
 
 \newcommand{\name}{%
     {\large \@firstname \ \textsc{\@lastname}}
 }
 
 \newcommand{\contact}{%
-        {\small \@address  \cps \@mobile \\ \@mail%
+        {\small \@address  \cps \href{tell:+989120196681}{\@mobile} \\ \href{mailto:\@mail}{\@mail} \\ \href{http://\@website}{\@website}%
         \\%
-        \linkedinview \cps \githubview \\ 
+        %\linkedinview 
+        %\cps \githubview 
+        %\cps \researchgateview \\ 
         } % 
 }
 
